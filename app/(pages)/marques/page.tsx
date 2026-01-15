@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import CTA from "@/components/CTA";
+import ContactForm from "@/components/ContactForm";
+import Coordonnees from "@/components/Coordonnees";
+import siteData from "@/data/site-data.json";
+
+export const metadata: Metadata = {
+  title: "Marques françaises de lunettes et lentilles",
+  description: "Découvrez toutes les marques françaises de lunettes et lentilles disponibles chez L'Optic du Brulhois à Layrac : Lafont, Face à Face, Essilor, Varilux, et bien d'autres.",
+  openGraph: {
+    title: "Marques françaises - L'Optic du Brulhois",
+    description: "Découvrez toutes les marques françaises de lunettes et lentilles disponibles chez L'Optic du Brulhois.",
+  },
+};
+
+export default function MarquesPage() {
+  const brandsByCategory = siteData.brands.reduce((acc, brand) => {
+    if (!acc[brand.category]) {
+      acc[brand.category] = [];
+    }
+    acc[brand.category].push(brand);
+    return acc;
+  }, {} as Record<string, typeof siteData.brands>);
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="bg-primary text-white section-padding">
+        <div className="container-custom text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Nos marques françaises
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            Un large choix de marques françaises de qualité pour vos lunettes et lentilles
+          </p>
+        </div>
+      </section>
+
+      {/* Brands by Category */}
+      <section className="section-padding bg-background-primary">
+        <div className="container-custom">
+          {Object.entries(brandsByCategory).map(([category, brands]) => (
+            <div key={category} className="mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">
+                {category}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {brands.map((brand) => (
+                  <div
+                    key={brand.id}
+                    className="bg-background-secondary p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-primary"
+                  >
+                    <h3 className="text-xl font-bold mb-3">
+                      {brand.name}
+                    </h3>
+                    <p className="leading-relaxed opacity-80">
+                      {brand.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why French Brands */}
+      <section className="section-padding bg-background-secondary">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Pourquoi choisir des marques françaises ?
+            </h2>
+            <p className="text-lg mb-6 opacity-80">
+              Les marques françaises de lunettes et lentilles sont reconnues mondialement pour leur qualité, 
+              leur innovation et leur savoir-faire artisanal. En choisissant des marques françaises, vous 
+              bénéficiez de produits de haute qualité tout en soutenant l'économie locale.
+            </p>
+            <p className="text-lg opacity-80">
+              Chez L'Optic du Brulhois, nous sommes fiers de proposer un large choix de marques françaises, 
+              des plus prestigieuses aux plus accessibles, pour répondre à tous vos besoins et tous vos budgets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <CTA />
+
+      {/* Coordonnées */}
+      <Coordonnees />
+
+      {/* Contact Form */}
+      <ContactForm />
+    </>
+  );
+}
+

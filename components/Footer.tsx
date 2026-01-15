@@ -1,0 +1,38 @@
+import Link from "next/link";
+import Image from "next/image";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-white">
+      <div className="footer-container section-padding flex justify-between items-center">
+        <div className="flex">
+          <div className="h-full bg-red-500">
+            <Image src="/images/logo_terracota_color.svg" alt="About Us" width={50} height={50} className="h-full" />
+          </div>
+          <div className="flex flex-col">
+            <span className="">Optic du Brulhois</span>
+            <span className="">Tout droits réservés</span>
+            <span className="">© 2025 - {currentYear}</span>
+          </div>
+        </div>
+        <nav className="">
+          <ul className="flex">
+            <li>
+              <Link href="/">Mentions légales</Link>
+            </li>
+            <li>
+              <Link href="/services">Politique de confidentialité</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="">
+          <span>Facebook</span>
+          <span>Instagram</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+

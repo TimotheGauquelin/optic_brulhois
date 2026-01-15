@@ -1,0 +1,161 @@
+{
+  "shop": {
+    "name": "L'Optic du Brulhois",
+    "address": {
+      "street": "123 Rue de la République",
+      "city": "Layrac",
+      "postalCode": "47390",
+      "fullAddress": "123 Rue de la République, 47390 Layrac, France"
+    },
+    "phone": "+33 5 XX XX XX XX",
+    "email": "contact@optic-brulhois.fr",
+    "hours": {
+      "monday": "9h00 - 12h30, 14h00 - 19h00",
+      "tuesday": "9h00 - 12h30, 14h00 - 19h00",
+      "wednesday": "9h00 - 12h30, 14h00 - 19h00",
+      "thursday": "9h00 - 12h30, 14h00 - 19h00",
+      "friday": "9h00 - 12h30, 14h00 - 19h00",
+      "saturday": "9h00 - 12h30, 14h00 - 18h00",
+      "sunday": "Fermé"
+    },
+    "googleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.123456789!2d0.661234!3d44.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDA3JzI0LjQiTiAwwrAzOSc0MC40IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr",
+    "googleMapsLink": "https://goo.gl/maps/XXXXXXXXXXXXX"
+  },
+  "services": [
+    {
+      "id": "examen-vue",
+      "title": "Examen de la vue",
+      "description": "Bilan complet de votre vision réalisé par nos opticiens diplômés. Détection de la myopie, hypermétropie, astigmatisme et presbytie.",
+      "icon": "👁️"
+    },
+    {
+      "id": "lunettes-sur-mesure",
+      "title": "Lunettes sur mesure",
+      "description": "Large choix de montures pour tous les goûts et tous les budgets. Montures de créateurs, classiques ou tendance.",
+      "icon": "🕶️"
+    },
+    {
+      "id": "lentilles-contact",
+      "title": "Lentilles de contact",
+      "description": "Lentilles journalières, mensuelles ou annuelles. Adaptation et suivi personnalisé pour un confort optimal.",
+      "icon": "🔍"
+    },
+    {
+      "id": "verres-progressifs",
+      "title": "Verres progressifs",
+      "description": "Solutions adaptées pour la presbytie avec des verres progressifs de dernière génération.",
+      "icon": "🔬"
+    },
+    {
+      "id": "verres-anti-lumiere-bleue",
+      "title": "Verres anti-lumière bleue",
+      "description": "Protection contre la lumière bleue des écrans pour réduire la fatigue visuelle.",
+      "icon": "💻"
+    },
+    {
+      "id": "reparation",
+      "title": "Réparation et ajustement",
+      "description": "Service de réparation rapide pour vos lunettes. Ajustement et remplacement de pièces.",
+      "icon": "🔧"
+    },
+    {
+      "id": "solaire",
+      "title": "Lunettes de soleil",
+      "description": "Protection UV optimale avec des lunettes de soleil de qualité, avec ou sans correction.",
+      "icon": "☀️"
+    },
+    {
+      "id": "enfant",
+      "title": "Lunettes pour enfants",
+      "description": "Montures adaptées aux enfants, robustes et confortables. Suivi personnalisé pour les jeunes patients.",
+      "icon": "👶"
+    }
+  ],
+  "brands": [
+    {
+      "id": "lafont",
+      "name": "Lafont",
+      "description": "Marque française emblématique créée en 1923, spécialisée dans les montures haut de gamme.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "face-a-face",
+      "name": "Face à Face",
+      "description": "Créateur français de montures design et contemporaines depuis 1995.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "alain-mikli",
+      "name": "Alain Mikli",
+      "description": "Marque française de luxe créée par le designer Alain Mikli, reconnue pour son innovation.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "ic-berlin",
+      "name": "ic! berlin",
+      "description": "Marque française de montures techniques sans vis ni soudure, design minimaliste.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "jacques-durand",
+      "name": "Jacques Durand",
+      "description": "Marque française artisanale créée en 1950, spécialisée dans les montures en acétate.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "morel",
+      "name": "Morel",
+      "description": "Marque française créée en 1880, fabricant de montures et de verres optiques.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "krys",
+      "name": "Krys",
+      "description": "Réseau français d'optique créé en 1965, proposant des montures accessibles.",
+      "category": "Lunettes"
+    },
+    {
+      "id": "essilor",
+      "name": "Essilor",
+      "description": "Leader mondial français des verres optiques, créé en 1972.",
+      "category": "Verres"
+    },
+    {
+      "id": "varilux",
+      "name": "Varilux",
+      "description": "Marque française d'Essilor spécialisée dans les verres progressifs depuis 1959.",
+      "category": "Verres"
+    },
+    {
+      "id": "crizal",
+      "name": "Crizal",
+      "description": "Marque française d'Essilor pour les traitements antireflets et anti-rayures.",
+      "category": "Verres"
+    },
+    {
+      "id": "airwear",
+      "name": "Airwear",
+      "description": "Marque française d'Essilor pour les verres en polycarbonate ultra-résistants.",
+      "category": "Verres"
+    },
+    {
+      "id": "essilor-acuvue",
+      "name": "Acuvue (Essilor)",
+      "description": "Lentilles de contact de qualité, distribuées par Essilor en France.",
+      "category": "Lentilles"
+    },
+    {
+      "id": "coopervision",
+      "name": "CooperVision",
+      "description": "Marque française de lentilles de contact, filiale de Cooper Companies.",
+      "category": "Lentilles"
+    },
+    {
+      "id": "bausch-lomb",
+      "name": "Bausch + Lomb",
+      "description": "Marque internationale présente en France, spécialisée dans les lentilles et solutions d'entretien.",
+      "category": "Lentilles"
+    }
+  ]
+}
+
