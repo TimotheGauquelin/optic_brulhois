@@ -47,9 +47,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-[112px] bg-background-secondary">
-      <div className="container-custom flex justify-between items-center bg-white p-8 rounded-lg shadow-lg">
-        <div className="w-1/2">
+    <section className=" bg-background-secondary py-10">
+      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg flex">
+        <div className="w-1/2 p-8 space-y-8">
           <div className="">
             <span className="text-primary font-bold">Contact</span>
             <h2 className="text-3xl">
@@ -62,8 +62,8 @@ export default function ContactForm() {
             </span>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg">
-            <div>
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg space-y-4">
+            <div className="flex flex-col space-y-1">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                 Nom complet *
               </label>
@@ -78,7 +78,7 @@ export default function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="flex flex-col space-y-1">
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email *
               </label>
@@ -99,7 +99,7 @@ export default function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="flex flex-col space-y-1">
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                 Téléphone
               </label>
@@ -111,7 +111,7 @@ export default function ContactForm() {
               />
             </div>
 
-            <div>
+            <div className="flex flex-col space-y-1">
               <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                 Sujet *
               </label>
@@ -132,12 +132,13 @@ export default function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="flex flex-col space-y-1">
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                 Message *
               </label>
               <textarea
                 id="message"
+                placeholder="Ecrivez votre message..."
                 rows={5}
                 {...register("message", { required: "Le message est requis" })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
@@ -147,10 +148,17 @@ export default function ContactForm() {
               )}
             </div>
 
+            <div className="flex flex space-y-1 justify-end">
+              <input type="checkbox" id="terms" className="mr-2" />
+              <a href="/politique-de-confidentialite" className="text-sm text-gray-500 hover:text-primary hover:underline">
+                En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre.
+              </a>
+            </div>
+
             <button
               type="submit"
               disabled={isSubmitting}
-              className="mt-8 bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              className="h-fit text-base bg-secondary text-white p-4 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               {isSubmitting ? "Envoi en cours..." : "Envoyer"}
             </button>
@@ -168,8 +176,8 @@ export default function ContactForm() {
             )}
           </form>
         </div>
-        <div className="w-1/2">
-          <Image src="/images/logo_terracota_color.svg" alt="About Us" width={500} height={500} />
+        <div className="w-1/2 border-l-2 border-primary">
+          <Image src="/images/magasin_conseil.png" alt="About Us" width={500} height={500} className="w-full h-full object-cover rounded-r-lg" />
         </div>
       </div>
     </section>

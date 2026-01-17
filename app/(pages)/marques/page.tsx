@@ -25,7 +25,7 @@ export default function MarquesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary text-white section-padding">
+      <section className="bg-primary text-white ">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Nos marques françaises
@@ -37,7 +37,7 @@ export default function MarquesPage() {
       </section>
 
       {/* Brands by Category */}
-      <section className="section-padding bg-background-primary">
+      <section className=" bg-background-primary">
         <div className="container-custom">
           {Object.entries(brandsByCategory).map(([category, brands]) => (
             <div key={category} className="mb-16">
@@ -65,7 +65,7 @@ export default function MarquesPage() {
       </section>
 
       {/* Why French Brands */}
-      <section className="section-padding bg-background-secondary">
+      <section className=" bg-background-secondary">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">

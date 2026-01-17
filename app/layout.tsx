@@ -159,6 +159,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://optic-brulhois.fr" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"></link>
         <Script
           id="schema-org"
           type="application/ld+json"

@@ -6,10 +6,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-white">
-      <div className="footer-container section-padding flex justify-between items-center">
-        <div className="flex">
-          <div className="h-full bg-red-500">
-            <Image src="/images/logo_terracota_color.svg" alt="About Us" width={50} height={50} className="h-full" />
+      <div className="py-3 container-custom flex justify-between items-center">
+        <div className="flex gap-3">
+          <div className="h-full">
+            <Link href="/">
+              <Image src="/images/logo_terracota_color.svg" alt="About Us" width={50} height={50} className="h-full" />
+            </Link>
           </div>
           <div className="flex flex-col">
             <span className="">Optic du Brulhois</span>
@@ -18,9 +20,12 @@ export default function Footer() {
           </div>
         </div>
         <nav className="">
-          <ul className="flex">
+          <ul className="flex gap-2">
             <li>
               <Link href="/">Mentions légales</Link>
+            </li>
+            <li>
+              <span>|</span>
             </li>
             <li>
               <Link href="/services">Politique de confidentialité</Link>

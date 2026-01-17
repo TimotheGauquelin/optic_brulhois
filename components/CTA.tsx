@@ -14,7 +14,7 @@ export default function CTA({
   buttonLink = "#contact",
 }: CTAProps) {
   return (
-    <section className="bg-primary text-white section-padding">
+    <section className="bg-primary text-white ">
       <div className="container-custom text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
         <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">{description}</p>

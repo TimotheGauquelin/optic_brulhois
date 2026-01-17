@@ -19,6 +19,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-montserrat)", "sans-serif"],
         serif: ["var(--font-poly)", "serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       fontSize: {
         base: "1rem", // 16px

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <div className="section-padding bg-white min-h-screen">
+    <div className=" bg-white min-h-screen">
       <div className="container-custom max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-primary">
           Politique de confidentialité

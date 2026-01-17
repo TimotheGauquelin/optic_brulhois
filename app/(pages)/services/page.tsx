@@ -17,7 +17,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary text-white section-padding">
+      <section className="bg-primary text-white ">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Nos services
@@ -29,7 +29,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="section-padding bg-background-primary">
+      <section className=" bg-background-primary">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {siteData.services.map((service) => (
@@ -51,7 +51,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Info */}
-      <section className="section-padding bg-background-secondary">
+      <section className=" bg-background-secondary">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
