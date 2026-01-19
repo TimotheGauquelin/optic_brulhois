@@ -16,8 +16,8 @@ export default function Coordonnees() {
               Vous pouvez nous contacter par téléphone, email ou venir nous voir.              </p>
           </div>
         </div>
-        <div className="flex gap-[40px]">
-          <div className="w-1/2 space-y-6">
+        <div className="flex flex-col md:flex-row gap-[40px]">
+          <div className="w-full md:w-1/2 space-y-6">
 
             <div className="flex items-start gap-2">
               <div className="w-[32px] h-[32px]">
@@ -58,23 +58,44 @@ export default function Coordonnees() {
               <div className="w-full">
                 <h3 className="text-xl font-semibold text-primary">Horaires d'ouverture</h3>
                 <ul className="space-y-4">
-                  <li className="flex justify-between">
-                    <span className="text-lg font-semibold">Lundi :</span>
-                    <span>{siteData.shop.hours.monday}</span>
+                  <li>
+                    <div className="flex justify-between items-start">
+                      <span className="text-lg font-semibold">Lundi :</span>
+                      <div className="text-right">
+                        {siteData.shop.hours.monday.afternoon ? (
+                          <div>{siteData.shop.hours.monday.afternoon}</div>
+                        ) : null}
+                      </div>
+                    </div>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-lg font-semibold">Mardi au Vendredi:</span>
-                    <span>{siteData.shop.hours.tuesday}</span>
+                  <li>
+                    <div className="flex justify-between items-start">
+                      <span className="text-lg font-semibold">Mardi au Vendredi:</span>
+                      <div className="text-right">
+                        {siteData.shop.hours.tuesday.morning ? (
+                          <div>{siteData.shop.hours.tuesday.morning}</div>
+                        ) : null}
+                        {siteData.shop.hours.tuesday.afternoon ? (
+                          <div>{siteData.shop.hours.tuesday.afternoon}</div>
+                        ) : null}
+                      </div>
+                    </div>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-lg font-semibold">Samedi :</span>
-                    <span>{siteData.shop.hours.saturday}</span>
+                  <li>
+                    <div className="flex justify-between items-start">
+                      <span className="text-lg font-semibold">Samedi :</span>
+                      <div className="text-right">
+                        {siteData.shop.hours.saturday.morning ? (
+                          <div>{siteData.shop.hours.saturday.morning}</div>
+                        ) : null}
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border-4 border-primary">
               <iframe
                 src={siteData.shop.googleMapsUrl}

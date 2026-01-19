@@ -3,6 +3,7 @@ import { Montserrat, Poly } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import Script from "next/script";
 import siteData from "@/data/site-data.json";
 
@@ -101,25 +102,36 @@ export default function RootLayout({
       return `${hours.padStart(2, "0")}:${minutes || "00"}`;
     };
 
-    Object.entries(hours).forEach(([day, hoursStr]) => {
-      if (hoursStr === "Fermé") return;
-
+    Object.entries(hours).forEach(([day, dayHours]) => {
       const dayOfWeek = dayMapping[day];
       if (!dayOfWeek) return;
 
-      const slots = hoursStr.split(",").map((s) => s.trim());
-
-      slots.forEach((slot) => {
-        const [opens, closes] = slot.split("-").map((s) => s.trim());
-        if (opens && closes) {
-          specifications.push({
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: dayOfWeek,
-            opens: formatTime(opens),
-            closes: formatTime(closes),
-          });
+      // Vérifier si c'est un objet avec morning/afternoon ou une chaîne (ancien format)
+      if (typeof dayHours === "object" && dayHours !== null) {
+        // Nouveau format avec morning et afternoon
+        if (dayHours.morning) {
+          const [opens, closes] = dayHours.morning.split("-").map((s: string) => s.trim());
+          if (opens && closes) {
+            specifications.push({
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: dayOfWeek,
+              opens: formatTime(opens),
+              closes: formatTime(closes),
+            });
+          }
         }
-      });
+        if (dayHours.afternoon) {
+          const [opens, closes] = dayHours.afternoon.split("-").map((s: string) => s.trim());
+          if (opens && closes) {
+            specifications.push({
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: dayOfWeek,
+              opens: formatTime(opens),
+              closes: formatTime(closes),
+            });
+          }
+        }
+      }
     });
 
     return specifications;
@@ -143,8 +155,8 @@ export default function RootLayout({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 44.123456,
-      "longitude": 0.661234,
+      "latitude": 44.13261,
+      "longitude": 0.662029,
     },
     "openingHoursSpecification": parseOpeningHours(),
     "priceRange": "€€",
@@ -157,7 +169,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${montserrat.variable} ${poly.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo_terracota_color.svg" />
         <link rel="canonical" href="https://optic-brulhois.fr" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"></link>
@@ -168,9 +180,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="relative">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ScrollToTop />
+        </div>
       </body>
     </html>
   );

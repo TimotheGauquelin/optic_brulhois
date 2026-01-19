@@ -1,3 +1,4 @@
+import formatRelativeDate from "@/app/utils/date/calendarDateToDateAgo";
 import Image from "next/image";
 
 const Testimony = ({ name, date, comment, rating, image }: { name: string, date: string, comment: string, rating: number, image: string }) => {
@@ -9,14 +10,16 @@ const Testimony = ({ name, date, comment, rating, image }: { name: string, date:
                 </div>
                 <div className="flex flex-col font-roboto">
                     <span className="text-base font-bold">{name}</span>
-                    <span>{date}</span>
+                    <span>{formatRelativeDate(date)}</span>
                 </div>
             </div>
             <p>
                 {comment}
             </p>
-            <div>
-                * * * * *
+            <div className="flex items-center gap-1">
+                {Array.from({ length: rating }).map((_, index) => (
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#F8AF0D"><path d="M0 0h24v24H0z" fill="none" /><path d="M0 0h24v24H0z" fill="none" /><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                ))}
             </div>
         </div>
     )

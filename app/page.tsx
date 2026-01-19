@@ -8,9 +8,11 @@ import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import KeyNumber from "@/components/KeyNumber";
 import TestimonyCarousel from "@/components/TestimonyCarousel";
+import AnimatedImage from "@/components/AnimatedImage";
+import AnimatedServiceGrid from "@/components/AnimatedServiceGrid";
 
 export const metadata: Metadata = {
-  title: "Accueil",
+  title: "L'Optic du Brulhois - Opticienne à Layrac",
   description: "L'Optic du Brulhois, votre opticienne de confiance à Layrac. Examen de la vue, lunettes sur mesure, lentilles de contact. Large choix de marques françaises.",
   openGraph: {
     title: "L'Optic du Brulhois - Opticienne à Layrac",
@@ -22,9 +24,9 @@ export default function HomePage() {
 
   return (
     <>
-      <section className=" bg-background-secondary">
-        <div className="container-custom mx-auto flex items-center justify-between">
-          <div className="w-1/2 space-y-[40px]">
+      <section id="jumbotron" className="bg-background-secondary">
+        <div className="container-custom mx-auto flex flex-col md:flex-row items-center justify-between">
+          <div className="w-full md:w-1/2 space-y-[40px]">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Une
               <span className="text-primary"> expertise </span>
@@ -33,16 +35,16 @@ export default function HomePage() {
             <p className="text-lg">
               Opticienne diplômée, je vous accompagne dans le choix de lunettes et de solutions visuelles adaptées à vos besoins.
               Conseils personnalisés, qualité des verres et confort visuel sont au cœur de mon engagement.            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#a_propos" className="h-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <div className="flex flex-row gap-4">
+              <Link href="#a_propos" className="inline-blockh-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
                 En savoir plus
               </Link>
-              <Link href="#contact" className="h-fit border-secondary border-4 text-secondary p-6 rounded-lg font-bold shadow-lg hover:shadow-xl">
+              <Link href="#contact" className="inline-block h-fit border-secondary border-4 text-secondary p-5 rounded-lg font-bold shadow-lg hover:shadow-xl">
                 Où nous trouver
               </Link>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="hidden md:block md:w-1/2">
             <Image
               src="/images/logo_terracota_color.svg"
               alt="About Us"
@@ -54,7 +56,7 @@ export default function HomePage() {
       </section>
 
       <section id="a_propos" className=" bg-white">
-        <div className="container-custom space-y-[40px]">
+        <div className="container-custom space-y-10">
           <div>
             <span className="text-primary font-bold">A propos</span>
             <h2 className="text-3xl leading-none ">
@@ -62,7 +64,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="flex items-center justify-between gap-40">
-            <div className="w-1/2 space-y-[40px]">
+            <div className="w-full md:w-1/2 space-y-[40px]">
               <p>
                 Opticienne de proximité, engagée à prendre soin de votre vision avec sérieux et bienveillanc, nous vous accompagnons à chaque étape:
                 du contrôle de la vue au choix de vos lunettes ou lentilles, en vous proposant des solutions adaptées à vos besoins et à votre style de vie.
@@ -74,21 +76,22 @@ export default function HomePage() {
                 Parce que chaque regard est unique, nous privilégions une relation de confiance durable avec nos clients, fondée sur la proximité, la transparence et le sens du service, afin de vous garantir confort visuel et sérénité au quotidien.
               </p>
             </div>
-            <div className="w-1/2 border-2 border-primary rounded-lg">
-              <Image
+            <div className="hidden md:block md:w-1/2 rounded-lg overflow-hidden">
+              <AnimatedImage
                 src="/images/magasin_devanture.jpg"
                 alt="About Us"
-                className="w-full h-full object-cover rounded-md"
                 width={500}
                 height={500}
+                className="w-full h-full border-2 border-primary object-cover rounded-lg"
+                animationType="fadeIn"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className=" bg-background-secondary">
-        <div className="container-custom flex flex-col gap-[40px]">
+      <section className="bg-background-secondary">
+        <div className="container-custom flex flex-col space-y-10">
           <div className="text-center">
             <span className="text-primary font-bold">Nos Services</span>
             <div className="space-y-[16px]">
@@ -101,29 +104,18 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {siteData.services.slice(0, 4).map((service) => (
-              <div key={service.id} className="flex">
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  url="/abc"
-                />
-              </div>
-            ))}
-          </div>
+          <AnimatedServiceGrid services={siteData.services.slice(0, 4)} />
           <div className="text-center mt-8">
-            <Link href="/services" className="bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <Link href="/services" className="inline-block h-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
               Voir tous nos services
             </Link>
           </div>
         </div>
       </section>
 
-      <section className=" bg-background-primary">
+      <section id="marques" className=" bg-background-primary">
         <div className="container-custom">
-          <div className="text-left space-y-[40px]">
+          <div className="text-left flex flex-col space-y-10">
             <div>
               <span className="text-primary font-bold">Nos marques</span>
               <div className="space-y-[16px]">
@@ -152,18 +144,16 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-8">
-              <Link href="/services" className="bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
-                Découvrir toutes nos marques
-              </Link>
-            </div>
+            <Link href="/services" className="inline-block w-fit mx-auto bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
+              Découvrir toutes nos marques
+            </Link>
           </div>
         </div>
       </section>
 
       <section className=" bg-background-primary">
         <div className="container-custom flex items-center gap-[40px]">
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <div className="text-left">
               <span className="text-primary font-bold">Quelques chiffres</span>
               <div className="space-y-[16px]">
@@ -180,13 +170,13 @@ export default function HomePage() {
             <div className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <KeyNumber number="2025" description="l'année d'ouverture de la boutique" animate={false} />
-                <KeyNumber number="600" description="de lunettes à votre vue" />
-                <KeyNumber number="100" description="vendus dans notre magasin" />
-                <KeyNumber number="10" description="de clients satisfaits" />
+                <KeyNumber symbol="+" number="600" description="de lunettes à votre vue" />
+                <KeyNumber symbol="+" number="100" description="vendus dans notre magasin" />
+                <KeyNumber symbol="+" number="10" description="de clients satisfaits" />
               </div>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="hidden md:block md:w-1/2">
             <Image src="/images/livre_lunette.png" alt="About Us" width={500} height={500} className="border-2 border-primary h-full object-cover rounded-md" />
           </div>
         </div>
@@ -209,7 +199,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTA />
+      <CTA buttonLink="#contact" />
 
       <Coordonnees />
 

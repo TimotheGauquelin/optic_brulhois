@@ -2,73 +2,84 @@
   "shop": {
     "name": "L'Optic du Brulhois",
     "address": {
-      "street": "123 Rue de la République",
+      "street": "291 Av. d'Etigny",
       "city": "Layrac",
       "postalCode": "47390",
-      "fullAddress": "123 Rue de la République, 47390 Layrac, France"
+      "fullAddress": "291 Av. d'Etigny, 47390 Layrac, France"
     },
-    "phone": "+33 5 XX XX XX XX",
+    "phone": "+33 5 64 72 32 43",
     "email": "contact@optic-brulhois.fr",
     "hours": {
-      "monday": "9h00 - 12h30, 14h00 - 19h00",
-      "tuesday": "9h00 - 12h30, 14h00 - 19h00",
-      "wednesday": "9h00 - 12h30, 14h00 - 19h00",
-      "thursday": "9h00 - 12h30, 14h00 - 19h00",
-      "friday": "9h00 - 12h30, 14h00 - 19h00",
-      "saturday": "9h00 - 12h30, 14h00 - 18h00",
-      "sunday": "Fermé"
+      "monday": {
+        "morning": null,
+        "afternoon": "14h00 - 19h00"
+      },
+      "tuesday": {
+        "morning": "9h00 - 12h00",
+        "afternoon": "14h00 - 19h00"
+      },
+      "wednesday": {
+        "morning": "9h00 - 12h00",
+        "afternoon": "14h00 - 19h00"
+      },
+      "thursday": {
+        "morning": "9h00 - 12h00",
+        "afternoon": "14h00 - 19h00"
+      },
+      "friday": {
+        "morning": "9h00 - 12h00",
+        "afternoon": "14h00 - 19h00"
+      },
+      "saturday": {
+        "morning": "9h00 - 13h00",
+        "afternoon": null
+      },
+      "sunday": {
+        "morning": null,
+        "afternoon": null
+      }
     },
-    "googleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.123456789!2d0.661234!3d44.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDA3JzI0LjQiTiAwwrAzOSc0MC40IkU!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr",
-    "googleMapsLink": "https://goo.gl/maps/XXXXXXXXXXXXX"
+    "googleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2863.612728436925!2d0.6594536751695727!3d44.132609571083385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12abb5fd862fe555%3A0x518b411fa8a5fd9d!2sOptic%20du%20Brulhois!5e0!3m2!1sfr!2sfr!4v1768777016350!5m2!1sfr!2sfr",
+    "googleMapsLink": "https://www.google.com/maps/place/Optic+du+Brulhois/@44.1326096,0.6594537,17z/data=!4m14!1m7!3m6!1s0x12abb5fd862fe555:0x518b411fa8a5fd9d!2sOptic+du+Brulhois!8m2!3d44.1326096!4d0.6620286!16s%2Fg%2F11xz5cpl1n!3m5!1s0x12abb5fd862fe555:0x518b411fa8a5fd9d!8m2!3d44.1326096!4d0.6620286!16s%2Fg%2F11xz5cpl1n?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
   },
   "services": [
     {
       "id": "examen-vue",
-      "title": "Examen de la vue",
+      "title": "Examen et Contrôle de la vue",
+      "short_description": "Nous réalisons des contrôles visuels complets pour évaluer votre vue avant de choisir une correction adaptée",
       "description": "Bilan complet de votre vision réalisé par nos opticiens diplômés. Détection de la myopie, hypermétropie, astigmatisme et presbytie.",
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 -960 960 960\" width=\"100%\" fill=\"#556A3B\"><path d=\"M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z\"/></svg>"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 -960 960 960\" width=\"100%\" fill=\"#556A3B\"><path d=\"M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z\"/></svg>",
+      "image": "/images/services_page/cabinet_machines.jpg"
     },
     {
       "id": "lunettes-sur-mesure",
-      "title": "Lunettes sur mesure",
+      "title": "Vente de lunettes de vue et solaires",
+      "short_description": "Affirmez votre style avec des collections tendance et des marques françaises mises en avant",
       "description": "Large choix de montures pour tous les goûts et tous les budgets. Montures de créateurs, classiques ou tendance.",
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 -960 960 960\" width=\"100%\" fill=\"#556A3B\"><path d=\"M262-320q-61 0-93-16.5T110-398q-15-25-25.5-59.5T65-520q-11 0-18-7t-7-18v-49q0-9 6-15.5t15-8.5q56-11 101.5-16t87.5-5q61 0 110.5 10t77.5 29h85q24-18 76-28.5T711-639q42 0 87 5t101 16q9 2 15 8.5t6 15.5v49q0 11-7 18t-18 7q-9 28-19.5 62.5T850-398q-26 44-58.5 61T698-320q-63 0-107-27t-61-87q-5-16-8.5-32t-8.5-32q-4-12-12-17.5t-21-5.5q-12 0-20 6t-13 17q-5 16-8.5 32t-8.5 32q-17 60-61 87t-107 27Zm0-58q71 0 97-42t26-108q0-17-12-26.5T326-572q-26-7-63-8.5t-72 3.5q-26 4-38.5 13T140-538q0 27 4.5 52t13.5 46q16 35 37.5 48.5T262-378Zm436 0q45 0 66.5-13.5T801-440q9-21 14-46t5-53q0-17-12.5-26.5T768-578q-35-5-71.5-3t-62.5 9q-35 8-47 17t-12 26q0 66 26 108.5t97 42.5Z\" /></svg>"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 -960 960 960\" width=\"100%\" fill=\"#556A3B\"><path d=\"M262-320q-61 0-93-16.5T110-398q-15-25-25.5-59.5T65-520q-11 0-18-7t-7-18v-49q0-9 6-15.5t15-8.5q56-11 101.5-16t87.5-5q61 0 110.5 10t77.5 29h85q24-18 76-28.5T711-639q42 0 87 5t101 16q9 2 15 8.5t6 15.5v49q0 11-7 18t-18 7q-9 28-19.5 62.5T850-398q-26 44-58.5 61T698-320q-63 0-107-27t-61-87q-5-16-8.5-32t-8.5-32q-4-12-12-17.5t-21-5.5q-12 0-20 6t-13 17q-5 16-8.5 32t-8.5 32q-17 60-61 87t-107 27Zm0-58q71 0 97-42t26-108q0-17-12-26.5T326-572q-26-7-63-8.5t-72 3.5q-26 4-38.5 13T140-538q0 27 4.5 52t13.5 46q16 35 37.5 48.5T262-378Zm436 0q45 0 66.5-13.5T801-440q9-21 14-46t5-53q0-17-12.5-26.5T768-578q-35-5-71.5-3t-62.5 9q-35 8-47 17t-12 26q0 66 26 108.5t97 42.5Z\" /></svg>",
+      "image": "/images/services_page/multichoix_lunettes.jpg"
     },
     {
       "id": "lentilles-contact",
-      "title": "Lentilles de contact",
+      "title": "Adaptation de lentilles de contact",
+      "short_description": "Nous proposons l’adaptation de lentilles de contact pour répondre aux besoins individuels",
       "description": "Lentilles journalières, mensuelles ou annuelles. Adaptation et suivi personnalisé pour un confort optimal.",
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 0 24 24\" width=\"100%\" fill=\"#556A3B\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\"/></svg>"
-    },
-    {
-      "id": "verres-progressifs",
-      "title": "Verres progressifs",
-      "description": "Solutions adaptées pour la presbytie avec des verres progressifs de dernière génération.",
-      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 24 24\" height=\"100%\" viewBox=\"0 0 24 24\" width=\"100%\" fill=\"#556A3B\"><g><rect fill=\"none\" height=\"24\" width=\"24\"/></g><g><g/><g><g><path d=\"M16.67,13.13C18.04,14.06,19,15.32,19,17v3h4v-3 C23,14.82,19.43,13.53,16.67,13.13z\" fill-rule=\"evenodd\"/></g><g><circle cx=\"9\" cy=\"8\" fill-rule=\"evenodd\" r=\"4\"/></g><g><path d=\"M15,12c2.21,0,4-1.79,4-4c0-2.21-1.79-4-4-4c-0.47,0-0.91,0.1-1.33,0.24 C14.5,5.27,15,6.58,15,8s-0.5,2.73-1.33,3.76C14.09,11.9,14.53,12,15,12z\" fill-rule=\"evenodd\"/></g><g><path d=\"M9,13c-2.67,0-8,1.34-8,4v3h16v-3C17,14.34,11.67,13,9,13z\" fill-rule=\"evenodd\"/></g></g></g></svg>"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 0 24 24\" width=\"100%\" fill=\"#556A3B\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z\"/></svg>",
+      "image": "/images/services_page/pose_lentilles.jpg"
     },
     {
       "id": "verres-anti-lumiere-bleue",
       "title": "Verres anti-lumière bleue",
       "description": "Protection contre la lumière bleue des écrans pour réduire la fatigue visuelle.",
-      "icon": "💻"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 0 24 24\" width=\"100%\" fill=\"#556A3B\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18V6c3.31 0 6 2.69 6 6s-2.69 6-6 6z\"/></svg>",
+      "image": "/images/services_page/multichoix_lunettes.jpg"
     },
     {
       "id": "reparation",
       "title": "Réparation et ajustement",
       "description": "Service de réparation rapide pour vos lunettes. Ajustement et remplacement de pièces.",
-      "icon": "🔧"
-    },
-    {
-      "id": "solaire",
-      "title": "Lunettes de soleil",
-      "description": "Protection UV optimale avec des lunettes de soleil de qualité, avec ou sans correction.",
-      "icon": "☀️"
-    },
-    {
-      "id": "enfant",
-      "title": "Lunettes pour enfants",
-      "description": "Montures adaptées aux enfants, robustes et confortables. Suivi personnalisé pour les jeunes patients.",
-      "icon": "👶"
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"100%\" viewBox=\"0 0 24 24\" width=\"100%\" fill=\"#556A3B\"><path clip-rule=\"evenodd\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z\"/></svg>",
+      "image": "/images/services_page/reparation_lunettes.jpg"
     }
   ],
   "brands": [
@@ -176,7 +187,7 @@
     {
       "id": "2",
       "name": "Stephane",
-      "date": "Il y a 2 mois",
+      "date": "2024-09-14",
       "comment": "Magasin optique sur la commune de Layrac très agréable  avec une très bonne pris en charge. La gérante est très souriante et  passionnée de son métier.À recommander fortement...",
       "rating": 5,
       "image": "/images/logo_terracota_color.svg"

@@ -48,46 +48,162 @@
     }
   }
 
+  .no-y-padding-container-custom {
+    @apply max-w-7xl mx-auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .no-y-padding-container-custom {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+  }
+
+  .cta-custom {
+    @apply max-w-6xl mx-auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .footer-container {
     @apply max-w-7xl mx-auto py-[16px];
   }
 }
 
-/* Override pour space-y-[40px] sur mobile/tablette */
 @layer utilities {
-  [class*="space-y-\[40px\]"] > * + * {
+  [class*="space-y-\[40px\]"]>*+* {
     margin-top: 12px !important;
   }
 
   @media (min-width: 1024px) {
-    [class*="space-y-\[40px\]"] > * + * {
+    [class*="space-y-\[40px\]"]>*+* {
       margin-top: 40px !important;
     }
   }
 
   @keyframes slideInFromRight {
     from {
+      opacity: 0;
       transform: translateX(100%);
     }
+
     to {
+      opacity: 1;
       transform: translateX(0);
     }
   }
 
   @keyframes slideInFromLeft {
     from {
+      opacity: 0;
       transform: translateX(-100%);
     }
+
     to {
+      opacity: 1;
       transform: translateX(0);
     }
   }
 
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
   .animate-slide-in-right {
-    animation: slideInFromRight 0.5s ease-in-out forwards;
+    animation: slideInFromRight 0.5s ease-out forwards;
   }
 
   .animate-slide-in-left {
-    animation: slideInFromLeft 0.5s ease-in-out forwards;
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @media (max-width: 1023px) {
+
+    .text-3xl,
+    [class*="text-3xl"],
+    [class*="text-\[48px\]"] {
+      font-size: 36px !important;
+    }
+
+    .text-2xl,
+    [class*="text-2xl"],
+    [class*="text-\[32px\]"] {
+      font-size: 24px !important;
+    }
+
+    .text-xl,
+    [class*="text-xl"],
+    [class*="text-\[24px\]"] {
+      font-size: 20px !important;
+    }
+
+    .text-lg,
+    [class*="text-lg"],
+    [class*="text-\[18px\]"],
+    [class*="text-\[20px\]"] {
+      font-size: 16px !important;
+    }
+
+    .text-base,
+    [class*="text-base"],
+    [class*="text-\[16px\]"] {
+      font-size: 14px !important;
+    }
+
+    .text-sm,
+    [class*="text-sm"],
+    [class*="text-\[14px\]"] {
+      font-size: 10px !important;
+    }
   }
 }

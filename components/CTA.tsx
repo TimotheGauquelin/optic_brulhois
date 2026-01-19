@@ -1,25 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CTAProps {
-  title?: string;
-  description?: string;
-  buttonText?: string;
   buttonLink?: string;
 }
 
 export default function CTA({
-  title = "Besoin d'un rendez-vous ?",
-  description = "Prenez rendez-vous dès aujourd'hui pour un examen de la vue ou pour choisir vos nouvelles lunettes.",
-  buttonText = "Prendre rendez-vous",
   buttonLink = "#contact",
 }: CTAProps) {
   return (
-    <section className="bg-primary text-white ">
-      <div className="container-custom text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-        <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">{description}</p>
-        <a href={buttonLink} className="btn-secondary">
-          {buttonText}
+    <section className="hidden md:block bg-white">
+      <div className="cta-custom text-center">
+        <a href={buttonLink} className="btn-secondary hover:opacity-90 transition-opacity duration-200">
+          <Image src="/images/call_to_action.svg" alt="About Us" width={50} height={50} className="h-full w-full" />
         </a>
       </div>
     </section>

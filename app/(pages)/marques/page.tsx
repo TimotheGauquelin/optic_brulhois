@@ -38,9 +38,9 @@ export default function MarquesPage() {
 
       {/* Brands by Category */}
       <section className=" bg-background-primary">
-        <div className="container-custom">
+        <div className="container-custom flex flex-col space-y-16">
           {Object.entries(brandsByCategory).map(([category, brands]) => (
-            <div key={category} className="mb-16">
+            <div key={category}>
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">
                 {category}
               </h2>
@@ -53,7 +53,7 @@ export default function MarquesPage() {
                     <h3 className="text-xl font-bold mb-3">
                       {brand.name}
                     </h3>
-                    <p className="leading-relaxed opacity-80">
+                    <p className="leading-relaxed opacity-90">
                       {brand.description}
                     </p>
                   </div>
@@ -71,12 +71,12 @@ export default function MarquesPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Pourquoi choisir des marques françaises ?
             </h2>
-            <p className="text-lg mb-6 opacity-80">
+            <p className="text-lg mb-6 opacity-90">
               Les marques françaises de lunettes et lentilles sont reconnues mondialement pour leur qualité, 
               leur innovation et leur savoir-faire artisanal. En choisissant des marques françaises, vous 
               bénéficiez de produits de haute qualité tout en soutenant l'économie locale.
             </p>
-            <p className="text-lg opacity-80">
+            <p className="text-lg opacity-90">
               Chez L'Optic du Brulhois, nous sommes fiers de proposer un large choix de marques françaises, 
               des plus prestigieuses aux plus accessibles, pour répondre à tous vos besoins et tous vos budgets.
             </p>
