@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 
@@ -10,11 +10,23 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
+  terms: boolean;
+}
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
 }
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
   const {
     register,
@@ -23,23 +35,86 @@ export default function ContactForm() {
     reset,
   } = useForm<FormData>();
 
+  useEffect(() => {
+    // Charger le script reCAPTCHA seulement si la clé est définie
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    if (!siteKey) {
+      console.warn("NEXT_PUBLIC_RECAPTCHA_SITE_KEY n'est pas définie");
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          setRecaptchaLoaded(true);
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // Nettoyer le script si le composant est démonté
+      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setErrorMessage("");
 
     try {
-      // En production, vous devrez configurer un service d'email (EmailJS, Resend, etc.)
-      // Pour l'instant, on simule l'envoi
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Obtenir le token reCAPTCHA
+      let recaptchaToken = "";
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      if (siteKey && recaptchaLoaded && window.grecaptcha) {
+        try {
+          recaptchaToken = await window.grecaptcha.execute(siteKey, { action: "submit" });
+        } catch (error) {
+          console.error("Erreur reCAPTCHA:", error);
+          setErrorMessage("Erreur de vérification. Veuillez réessayer.");
+          setSubmitStatus("error");
+          setIsSubmitting(false);
+          return;
+        }
+      } else if (siteKey && !recaptchaLoaded) {
+        setErrorMessage("Vérification de sécurité en cours de chargement. Veuillez patienter.");
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+        return;
+      }
 
-      // Ici, vous pouvez ajouter l'intégration avec votre service d'email
-      // Exemple avec mailto (temporaire)
-      const mailtoLink = `mailto:contact@optic-brulhois.fr?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone}\n\nMessage:\n${data.message}`)}`;
-      window.location.href = mailtoLink;
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          recaptchaToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setErrorMessage(result.error || "Une erreur est survenue lors de l'envoi du message");
+        setSubmitStatus("error");
+        return;
+      }
 
       setSubmitStatus("success");
       reset();
     } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setErrorMessage("Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.");
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -151,30 +226,44 @@ export default function ContactForm() {
                 )}
               </div>
 
-              <div className="flex flex space-y-1 justify-end">
-                <input type="checkbox" id="terms" className="mr-2" />
-                <a href="/politique-de-confidentialite" className="text-sm text-gray-500 hover:text-primary hover:underline">
-                  En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre.
-                </a>
+              <div className="flex items-start space-x-2">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  {...register("terms", {
+                    required: "Vous devez accepter les conditions pour envoyer le formulaire",
+                  })}
+                  className="mt-1 mr-2"
+                />
+                <label htmlFor="terms" className="text-sm text-gray-500">
+                  En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre.{" "}
+                  <a href="/politique-confidentialite" className="hover:text-primary hover:underline">
+                    En savoir plus
+                  </a>
+                  *
+                </label>
               </div>
+              {errors.terms && (
+                <p className="text-sm text-red-600">{errors.terms.message}</p>
+              )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="h-fit text-base bg-secondary text-white p-4 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                className="h-fit text-base bg-secondary text-white p-4 rounded-lg hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl"
               >
                 {isSubmitting ? "Envoi en cours..." : "Envoyer"}
               </button>
 
               {submitStatus === "success" && (
-                <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                <div className="p-4 bg-[#d7e8c2] border border-secondary text-secondary rounded-lg">
                   Message envoyé avec succès ! Nous vous répondrons rapidement.
                 </div>
               )}
 
               {submitStatus === "error" && (
                 <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                  Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.
+                  {errorMessage || "Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone."}
                 </div>
               )}
             </form>

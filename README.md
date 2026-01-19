@@ -75,17 +75,37 @@ optic_brulhois_front/
 
 ## 📧 Configuration du formulaire de contact
 
-Le formulaire de contact utilise actuellement un lien `mailto:`. Pour une solution professionnelle, configurez un service d'email :
+Le formulaire de contact utilise **Resend** pour envoyer des emails. 
 
-### Option 1 : EmailJS (gratuit)
-1. Créez un compte sur [EmailJS](https://www.emailjs.com/)
-2. Configurez un service email
-3. Intégrez l'API dans `components/ContactForm.tsx`
+### Configuration Resend
 
-### Option 2 : Resend (recommandé)
-1. Créez un compte sur [Resend](https://resend.com/)
-2. Créez une API route dans `app/api/contact/route.ts`
-3. Utilisez l'API dans le formulaire
+Consultez le fichier [CONFIGURATION-RESEND.md](./CONFIGURATION-RESEND.md) pour les instructions détaillées.
+
+**Résumé rapide :**
+
+1. **Configuration Resend :**
+   - Créez un compte gratuit sur [Resend](https://resend.com/) (100 emails/jour)
+   - Obtenez votre clé API
+
+2. **Configuration reCAPTCHA v3 :**
+   - Allez sur [Google reCAPTCHA](https://www.google.com/recaptcha/admin/create)
+   - Créez un nouveau site avec le type "reCAPTCHA v3"
+   - Ajoutez votre domaine (ex: `localhost` pour le dev, `optic-brulhois.fr` pour la prod)
+   - Copiez la **Site Key** et la **Secret Key**
+
+3. **Créer le fichier `.env.local` :**
+   ```env
+   # Resend
+   RESEND_API_KEY=re_votre_cle_api
+   RESEND_FROM_EMAIL=onboarding@resend.dev
+   RESEND_TO_EMAIL=contact@optic-brulhois.fr
+   
+   # reCAPTCHA v3
+   NEXT_PUBLIC_RECAPTCHA_SITE_KEY=votre_site_key_ici
+   RECAPTCHA_SECRET_KEY=votre_secret_key_ici
+   ```
+
+4. Redémarrez votre serveur de développement
 
 ## 📄 Licence
 
