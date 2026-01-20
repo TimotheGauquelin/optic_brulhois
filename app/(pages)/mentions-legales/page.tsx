@@ -14,10 +14,15 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <div className=" bg-white">
-      <div id="jumbotron" className="jumbotron-custom mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-primary">
-          Mentions légales
-        </h1>
+      <div id="jumbotron" className="jumbotron-custom md:pb-16 mx-auto">
+        <div className="space-y-4 mb-8 ">
+          <h1 className="text-3xl font-bold text-primary">
+            Mentions légales
+          </h1>
+          <p className="text-sm text-gray-500">
+            Dernière mise à jour : {new Date().toLocaleDateString("fr-FR", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+        </div>
 
         <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
           <section>
@@ -130,12 +135,6 @@ export default function MentionsLegalesPage() {
               </p>
             </div>
           </section>
-
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <p className="text-sm text-gray-500">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
-          </div>
         </div>
       </div>
     </div>
