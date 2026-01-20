@@ -38,7 +38,7 @@ export default function HomePage() {
               <Link href="#a_propos" className="inline-block h-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
                 En savoir plus
               </Link>
-              <Link href="#contact" className="inline-block h-fit border-secondary border-4 text-secondary p-5 rounded-lg font-bold shadow-lg hover:shadow-xl">
+              <Link href="#find-us" className="inline-block h-fit border-secondary border-4 text-secondary p-5 rounded-lg font-bold shadow-lg hover:shadow-xl">
                 Où nous trouver
               </Link>
             </div>

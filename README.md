@@ -94,6 +94,10 @@ Consultez le fichier [CONFIGURATION-RESEND.md](./CONFIGURATION-RESEND.md) pour l
    - Copiez la **Site Key** et la **Secret Key**
 
 3. **Créer le fichier `.env.local` :**
+   
+   Consultez le fichier [ENVIRONMENT.md](./ENVIRONMENT.md) pour les instructions détaillées.
+   
+   Créez un fichier `.env.local` à la racine du projet :
    ```env
    # Resend
    RESEND_API_KEY=re_votre_cle_api
@@ -106,6 +110,27 @@ Consultez le fichier [CONFIGURATION-RESEND.md](./CONFIGURATION-RESEND.md) pour l
    ```
 
 4. Redémarrez votre serveur de développement
+
+## 🚀 Déploiement
+
+### Checklist avant déploiement
+
+- [ ] Toutes les variables d'environnement sont configurées dans Vercel
+- [ ] Le code de vérification Google est mis à jour dans `app/layout.tsx` (ligne 73)
+- [ ] Les images sont optimisées et présentes dans `public/images/`
+- [ ] Le sitemap inclut toutes les pages (déjà configuré)
+- [ ] Test du build : `npm run build` (doit réussir sans erreur)
+
+### Variables d'environnement Vercel
+
+Assurez-vous d'ajouter toutes les variables dans **Settings > Environment Variables** :
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+- `RESEND_TO_EMAIL`
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
+- `RECAPTCHA_SECRET_KEY`
+
+Consultez [ENVIRONMENT.md](./ENVIRONMENT.md) pour plus de détails.
 
 ## 📄 Licence
 

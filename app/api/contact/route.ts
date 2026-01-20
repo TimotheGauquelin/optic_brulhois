@@ -144,9 +144,20 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    const toEmail = process.env.RESEND_TO_EMAIL;
+
+    if (!fromEmail || !toEmail) {
+      console.error("Variables d'environnement Resend manquantes");
+      return NextResponse.json(
+        { error: "Configuration email manquante" },
+        { status: 500 }
+      );
+    }
+
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
-      to: process.env.RESEND_TO_EMAIL || "timothegauquelin@gmail.com",
+      from: fromEmail,
+      to: toEmail,
       replyTo: email,
       subject: `Nouveau message de contact - ${subjectLabel}`,
       html: emailContent,

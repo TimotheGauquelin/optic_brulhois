@@ -2,7 +2,7 @@ import siteData from "@/data/site-data.json";
 
 export default function Coordonnees() {
   return (
-    <section className="">
+    <section id="find-us">
       <div className="container-custom flex flex-col gap-[40px]">
         <div className="text-left">
           <span className="text-primary font-bold">Nos Coordonnées</span>
