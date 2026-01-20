@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import siteData from "@/data/site-data.json";
@@ -43,13 +44,17 @@ export default function Header() {
 
   return (
     <header id="header" className={`bg-white md:bg-background-secondary sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "border-b-2 border-primary" : ""}`}>
-      <nav id="lala" ref={menuDesktopRef} className="relative py-3 container-custom">
+      <nav ref={menuDesktopRef} className="relative py-3 container-custom">
         <div id="menu-desktop" className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/images/logo_terracota_color.svg"
               alt={siteData.shop.name}
+              width={120}
+              height={48}
               className="h-12 w-auto"
+              style={{ width: "auto", height: "auto" }}
+              priority
             />
           </Link>
 

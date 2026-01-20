@@ -3,18 +3,34 @@ import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
 async function verifyRecaptcha(token: string): Promise<boolean> {
   if (!token) {
     return false;
   }
 
   try {
+    const params = new URLSearchParams({
+      secret: process.env.RECAPTCHA_SECRET_KEY || "",
+      response: token,
+    });
+
     const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+      body: params.toString(),
     });
 
     const data = await response.json();
@@ -25,9 +41,19 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
   }
 }
 
+interface ContactRequestBody {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+  terms: boolean;
+  recaptchaToken: string;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    const body: ContactRequestBody = await request.json();
     const { name, email, phone, subject, message, terms, recaptchaToken } = body;
 
     if (!terms) {
@@ -99,18 +125,18 @@ export async function POST(request: NextRequest) {
             </div>
             <div class="content">
               <div class="field">
-                <span class="label">Nom:</span> ${name}
+                <span class="label">Nom:</span> ${escapeHtml(name)}
               </div>
               <div class="field">
-                <span class="label">Email:</span> <a href="mailto:${email}">${email}</a>
+                <span class="label">Email:</span> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>
               </div>
-              ${phone ? `<div class="field"><span class="label">Téléphone:</span> <a href="tel:${phone}">${phone}</a></div>` : ""}
+              ${phone ? `<div class="field"><span class="label">Téléphone:</span> <a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a></div>` : ""}
               <div class="field">
-                <span class="label">Sujet:</span> ${subjectLabel}
+                <span class="label">Sujet:</span> ${escapeHtml(subjectLabel)}
               </div>
               <div class="field">
                 <span class="label">Message:</span>
-                <div class="message-box">${message.replace(/\n/g, "<br>")}</div>
+                <div class="message-box">${escapeHtml(message).replace(/\n/g, "<br>")}</div>
               </div>
             </div>
           </div>

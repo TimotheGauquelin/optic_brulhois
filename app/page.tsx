@@ -5,7 +5,6 @@ import ContactForm from "@/components/ContactForm";
 import Coordonnees from "@/components/Coordonnees";
 import siteData from "@/data/site-data.json";
 import Image from "next/image";
-import ServiceCard from "@/components/ServiceCard";
 import KeyNumber from "@/components/KeyNumber";
 import TestimonyCarousel from "@/components/TestimonyCarousel";
 import AnimatedImage from "@/components/AnimatedImage";
@@ -25,7 +24,7 @@ export default function HomePage() {
   return (
     <>
       <section id="jumbotron" className="bg-background-secondary">
-        <div className="container-custom mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div className="container-custom mx-auto flex flex-col md:flex-row items-center justify-between gap-[40px]">
           <div className="w-full md:w-1/2 space-y-[40px]">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Une
@@ -36,7 +35,7 @@ export default function HomePage() {
               Opticienne diplômée, je vous accompagne dans le choix de lunettes et de solutions visuelles adaptées à vos besoins.
               Conseils personnalisés, qualité des verres et confort visuel sont au cœur de mon engagement.            </p>
             <div className="flex flex-row gap-4">
-              <Link href="#a_propos" className="inline-blockh-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
+              <Link href="#a_propos" className="inline-block h-fit bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
                 En savoir plus
               </Link>
               <Link href="#contact" className="inline-block h-fit border-secondary border-4 text-secondary p-5 rounded-lg font-bold shadow-lg hover:shadow-xl">
@@ -46,10 +45,11 @@ export default function HomePage() {
           </div>
           <div className="hidden md:block md:w-1/2">
             <Image
-              src="/images/logo_terracota_color.svg"
+              src="/images/magasin_facade.jpg"
               alt="About Us"
               width={500}
               height={500}
+              className="w-full h-full object-cover rounded-lg border-2 border-primary"
             />
           </div>
         </div>
@@ -130,8 +130,8 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {siteData.brands.slice(0, 4).map((brand) => (
-                <div key={brand.id} className="py-6 px-3 border-1 border-black space-y-4 flex flex-col items-center justify-center shadow-[0px_1px_12px_rgba(0,0,0,0.4)]">
-                  <div className="w-full rounded-lg border-1 border-[#A0A0A0]">
+                <div key={brand.id} className="py-6 px-3 border border-black space-y-4 flex flex-col items-center justify-center shadow-[0px_1px_12px_rgba(0,0,0,0.4)]">
+                  <div className="w-full rounded-lg border border-[#A0A0A0]">
                     <Image
                       src={brand.image ?? ""}
                       alt={brand.name}
@@ -144,7 +144,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <Link href="/services" className="inline-block w-fit mx-auto bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <Link href="/marques" className="inline-block w-fit mx-auto bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">
               Découvrir toutes nos marques
             </Link>
           </div>
@@ -188,7 +188,7 @@ export default function HomePage() {
             <span className="text-primary font-bold">Témoignages</span>
             <div className="space-y-[16px]">
               <h2 className="text-3xl leading-none">
-                Il parles de l'<span className="text-primary">Optic du Brulhois</span>
+                Il parles de l&apos;<span className="text-primary">Optic du Brulhois</span>
               </h2>
               <p className="text-lg">
                 Des commentaires positifs de nos clients

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <div className=" bg-white">
-      <div className="container-custom mx-auto">
+    <div className="bg-white">
+      <div id="jumbotron" className="jumbotron-custom mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-primary">
           Politique de confidentialité
         </h1>
@@ -22,7 +22,7 @@ export default function PolitiqueConfidentialitePage() {
         <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
           <section>
             <p className="text-lg text-gray-600 mb-6">
-              La présente politique de confidentialité décrit la manière dont L'Optic du Brulhois collecte,
+              La présente politique de confidentialité décrit la manière dont L&apos;Optic du Brulhois collecte,
               utilise et protège les informations que vous nous fournissez lorsque vous utilisez notre site web.
             </p>
           </section>
@@ -47,10 +47,10 @@ export default function PolitiqueConfidentialitePage() {
           <section>
             <h2 className="text-2xl font-bold mb-4 text-gray-900">2. Données collectées</h2>
             <p>
-              L'Optic du Brulhois collecte des données personnelles uniquement via son formulaire de contact. Nous avons besoin de :
+              L&apos;Optic du Brulhois collecte des données personnelles uniquement via son formulaire de contact. Nous avons besoin de :
             </p>
             <ul className="list-disc list-inside mt-4 space-y-2 ml-4">
-              <li><strong>Données d'identification :</strong>
+              <li><strong>Données d&apos;identification :</strong>
                 <ul className="list-disc list-inside mt-4 space-y-2 ml-4">
                   <li>Nom</li>
                   <li>Prénom</li>
@@ -70,7 +70,7 @@ export default function PolitiqueConfidentialitePage() {
             </p>
             <ul className="list-disc list-inside mt-4 space-y-2 ml-4">
               <li>Répondre aux messages envoyés via le formulaire de contact</li>
-              <li>Echanger par e-mail avec l’utilisateur</li>
+              <li>Echanger par e-mail avec l&apos;utilisateur</li>
             </ul>
             <p className="mt-4 font-bold">
               Elles ne sont en aucun cas utilisées à des fins commerciales ou publicitaires.
@@ -100,8 +100,8 @@ export default function PolitiqueConfidentialitePage() {
               Nous pouvons partager vos données avec :
             </p>
             <ul className="list-disc list-inside mt-4 space-y-2 ml-4">
-              <li><strong>Nos prestataires techniques :</strong> hébergeur, services d'email (dans le cadre de l'exécution de leurs services)</li>
-              <li><strong>Les autorités compétentes :</strong> en cas d'obligation légale ou de réquisition judiciaire</li>
+              <li><strong>Nos prestataires techniques :</strong> hébergeur, services d&apos;email (dans le cadre de l&apos;exécution de leurs services)</li>
+              <li><strong>Les autorités compétentes :</strong> en cas d&apos;obligation légale ou de réquisition judiciaire</li>
             </ul>
           </section>
 
@@ -113,7 +113,7 @@ export default function PolitiqueConfidentialitePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Droits de l'utilisateur</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Droits de l&apos;utilisateur</h2>
             <p>
               Pour toute question concernant cette politique de confidentialité ou le traitement de vos données personnelles,
               vous pouvez nous contacter :

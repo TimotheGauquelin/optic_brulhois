@@ -106,9 +106,7 @@ export default function RootLayout({
       const dayOfWeek = dayMapping[day];
       if (!dayOfWeek) return;
 
-      // Vérifier si c'est un objet avec morning/afternoon ou une chaîne (ancien format)
       if (typeof dayHours === "object" && dayHours !== null) {
-        // Nouveau format avec morning et afternoon
         if (dayHours.morning) {
           const [opens, closes] = dayHours.morning.split("-").map((s: string) => s.trim());
           if (opens && closes) {
@@ -179,7 +177,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         <div className="relative">
           <Header />
           <main>{children}</main>

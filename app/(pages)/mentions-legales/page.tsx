@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <div className=" bg-white">
-      <div className="container-custom mx-auto">
+      <div id="jumbotron" className="jumbotron-custom mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-primary">
           Mentions légales
         </h1>
@@ -68,14 +68,14 @@ export default function MentionsLegalesPage() {
             <h2 className="text-2xl font-bold mb-4 text-gray-900">5. Protection des données personnelles</h2>
             <p>
               Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD),
-              vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
+              vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition aux données personnelles vous concernant.
             </p>
             <p className="mt-4">
-              Pour exercer ce droit, vous pouvez nous contacter à l'adresse suivante :{" "}
+              Pour exercer ce droit, vous pouvez nous contacter à l&apos;adresse suivante :{" "}
               <a href={`mailto:${siteData.shop.email}`} className="text-primary hover:underline">{siteData.shop.email}</a>
             </p>
             <p className="mt-4">
-              Pour plus d'informations, consultez notre{" "}
+              Pour plus d&apos;informations, consultez notre{" "}
               <Link href="/politique-confidentialite" className="text-primary hover:underline">
                 Politique de confidentialité
               </Link>.
@@ -85,7 +85,7 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4 text-gray-900">6. Liens externes</h2>
             <p>
-              Le site peut contenir des liens vers d'autres sites. L'Optic du Brulhois n'exerce aucun contrôle sur ces sites
+              Le site peut contenir des liens vers d&apos;autres sites. L&apos;Optic du Brulhois n&apos;exerce aucun contrôle sur ces sites
               et décline toute responsabilité quant à leur contenu.
             </p>
           </section>
@@ -93,20 +93,20 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Limitation de responsabilité</h2>
             <p>
-              <span className="font-bold">{siteData.shop.name}</span> s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site,
+              <span className="font-bold">{siteData.shop.name}</span> s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des informations diffusées sur ce site,
               dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
             </p>
             <p className="mt-4">
-              Toutefois, <span className="font-bold">{siteData.shop.name}</span> ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations
-              mises à disposition sur ce site. En conséquence, l'entreprise décline toute responsabilité pour tout dommage
-              résultant d'une imprécision ou d'une omission des informations disponibles sur ce site.
+              Toutefois, <span className="font-bold">{siteData.shop.name}</span> ne peut garantir l&apos;exactitude, la précision ou l&apos;exhaustivité des informations
+              mises à disposition sur ce site. En conséquence, l&apos;entreprise décline toute responsabilité pour tout dommage
+              résultant d&apos;une imprécision ou d&apos;une omission des informations disponibles sur ce site.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4 text-gray-900">9. Droit applicable</h2>
             <p>
-              Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut d'accord amiable,
+              Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut d&apos;accord amiable,
               le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.
             </p>
           </section>

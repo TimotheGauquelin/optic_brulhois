@@ -27,18 +27,21 @@ export default function AnimatedServiceGrid({ services }: AnimatedServiceGridPro
     const currentElement = gridRef.current;
     if (!currentElement) return;
 
+    const timeouts: NodeJS.Timeout[] = [];
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             services.forEach((_, index) => {
-              setTimeout(() => {
+              const timeout = setTimeout(() => {
                 setVisibleCards((prev) => {
                   const newState = [...prev];
                   newState[index] = true;
                   return newState;
                 });
               }, index * 300);
+              timeouts.push(timeout);
             });
             observer.disconnect();
           }
@@ -53,8 +56,9 @@ export default function AnimatedServiceGrid({ services }: AnimatedServiceGridPro
 
     return () => {
       observer.disconnect();
+      timeouts.forEach((timeout) => clearTimeout(timeout));
     };
-  }, [services.length]);
+  }, [services]);
 
   return (
     <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

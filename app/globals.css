@@ -15,6 +15,13 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 100px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
   }
 
   body {
@@ -31,6 +38,23 @@
 }
 
 @layer components {
+  .jumbotron-custom {
+    @apply max-w-7xl mx-auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .jumbotron-custom {
+      padding-top: 64px;
+      padding-bottom: 0px;
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto;
     padding-top: 24px;
@@ -50,16 +74,12 @@
 
   .no-y-padding-container-custom {
     @apply max-w-7xl mx-auto;
-    padding-top: 24px;
-    padding-bottom: 24px;
     padding-left: 12px;
     padding-right: 12px;
   }
 
   @media (min-width: 1024px) {
     .no-y-padding-container-custom {
-      padding-top: 24px;
-      padding-bottom: 24px;
       padding-left: 64px;
       padding-right: 64px;
     }

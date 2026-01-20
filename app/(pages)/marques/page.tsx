@@ -24,17 +24,19 @@ export default function MarquesPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-primary text-white ">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Nos marques françaises
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-            Un large choix de marques françaises de qualité pour vos lunettes et lentilles
+      <div id="jumbotron" className="jumbotron-custom mx-auto">
+        <h1 className="text-3xl font-bold">
+          Nos <span className="text-primary">marques</span>
+        </h1>
+        <div className="space-y-4">
+          <p className="text-lg">
+            Nous privilégions la qualité en vous proposant des lunettes produites en France. Chaque monture est issue d’un savoir-faire reconnu, alliant design, confort et durabilité. Travailler avec des fabricants français nous permet de garantir des standards élevés de fabrication. Nous sélectionnons nos collections avec soin afin de répondre à toutes les envies et à tous les styles.
+          </p>
+          <p className="text-lg">
+            Découvrez ci-dessous les marques françaises qui nous font confiance et avec lesquelles nous collaborons.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Brands by Category */}
       <section className=" bg-background-primary">
@@ -72,12 +74,12 @@ export default function MarquesPage() {
               Pourquoi choisir des marques françaises ?
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Les marques françaises de lunettes et lentilles sont reconnues mondialement pour leur qualité, 
-              leur innovation et leur savoir-faire artisanal. En choisissant des marques françaises, vous 
-              bénéficiez de produits de haute qualité tout en soutenant l'économie locale.
+              Les marques françaises de lunettes et lentilles sont reconnues mondialement pour leur qualité,
+              leur innovation et leur savoir-faire artisanal. En choisissant des marques françaises, vous
+              bénéficiez de produits de haute qualité tout en soutenant l&apos;économie locale.
             </p>
             <p className="text-lg opacity-90">
-              Chez L'Optic du Brulhois, nous sommes fiers de proposer un large choix de marques françaises, 
+              Chez L&apos;Optic du Brulhois, nous sommes fiers de proposer un large choix de marques françaises,
               des plus prestigieuses aux plus accessibles, pour répondre à tous vos besoins et tous vos budgets.
             </p>
           </div>

@@ -33,6 +33,8 @@ const KeyNumber = ({ number, description, animate = true, symbol }:
         const currentElement = numberRef.current;
         if (!currentElement) return;
 
+        let timer: NodeJS.Timeout | null = null;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -46,14 +48,17 @@ const KeyNumber = ({ number, description, animate = true, symbol }:
                         const stepDuration = duration / steps;
 
                         let currentStep = 0;
-                        const timer = setInterval(() => {
+                        timer = setInterval(() => {
                             currentStep++;
                             const newValue = Math.min(Math.floor(increment * currentStep), num);
                             setCount(newValue);
 
                             if (currentStep >= steps) {
                                 setCount(num);
-                                clearInterval(timer);
+                                if (timer) {
+                                    clearInterval(timer);
+                                    timer = null;
+                                }
                             }
                         }, stepDuration);
 
@@ -70,8 +75,11 @@ const KeyNumber = ({ number, description, animate = true, symbol }:
 
         return () => {
             observer.disconnect();
+            if (timer) {
+                clearInterval(timer);
+            }
         };
-    }, [num]);
+    }, [num, animate]);
 
     if (num === null) {
         return (
@@ -94,7 +102,9 @@ const KeyNumber = ({ number, description, animate = true, symbol }:
     return (
         <div ref={numberRef} className="col-span-2 gap-[24px]">
             <h3 className="text-2xl mb-2">
-                {hasAnimated ? `${prefix}${symbol ? symbol + ' ' : ''}${count}${suffix ? ' ' + suffix : ''}` : `${prefix}0${suffix ? ' ' + suffix : ''}`}
+                {hasAnimated 
+                    ? `${prefix}${symbol ? `${symbol} ` : ""}${count}${suffix ? ` ${suffix}` : ""}` 
+                    : `${prefix}0${suffix ? ` ${suffix}` : ""}`}
             </h3>
             <p className="text-base">{description}</p>
         </div>

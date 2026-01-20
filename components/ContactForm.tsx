@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 
-interface FormData {
+interface ContactFormData {
   name: string;
   email: string;
   phone: string;
@@ -33,13 +33,24 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+  } = useForm<ContactFormData>();
 
   useEffect(() => {
     // Charger le script reCAPTCHA seulement si la clé est définie
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
     if (!siteKey) {
       console.warn("NEXT_PUBLIC_RECAPTCHA_SITE_KEY n'est pas définie");
+      return;
+    }
+
+    // Vérifier si le script existe déjà
+    const existingScript = document.querySelector(`script[src*="recaptcha/api.js"]`);
+    if (existingScript) {
+      if (window.grecaptcha) {
+        window.grecaptcha.ready(() => {
+          setRecaptchaLoaded(true);
+        });
+      }
       return;
     }
 
@@ -54,18 +65,21 @@ export default function ContactForm() {
         });
       }
     };
+    script.onerror = () => {
+      console.error("Erreur lors du chargement du script reCAPTCHA");
+    };
     document.body.appendChild(script);
 
     return () => {
       // Nettoyer le script si le composant est démonté
-      const existingScript = document.querySelector(`script[src="${script.src}"]`);
-      if (existingScript) {
-        document.body.removeChild(existingScript);
+      const scriptToRemove = document.querySelector(`script[src="${script.src}"]`);
+      if (scriptToRemove && scriptToRemove.parentNode) {
+        scriptToRemove.parentNode.removeChild(scriptToRemove);
       }
     };
   }, []);
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setErrorMessage("");
