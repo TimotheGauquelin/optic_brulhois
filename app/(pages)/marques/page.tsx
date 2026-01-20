@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import CTA from "@/components/CTA";
 import ContactForm from "@/components/ContactForm";
 import Coordonnees from "@/components/Coordonnees";
@@ -48,17 +50,31 @@ export default function MarquesPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {brands.map((brand) => (
-                  <div
+                  <Link
                     key={brand.id}
-                    className="bg-background-secondary p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-primary"
+                    href={`/marques/${brand.id}`}
+                    className="bg-background-secondary rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-primary overflow-hidden group"
                   >
-                    <h3 className="text-xl font-bold mb-3">
-                      {brand.name}
-                    </h3>
-                    <p className="leading-relaxed opacity-90">
-                      {brand.description}
-                    </p>
-                  </div>
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={brand.image || "/images/cabinet_machines.jpg"}
+                        alt={brand.name}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                        {brand.name}
+                      </h3>
+                      <p className="leading-relaxed opacity-90 line-clamp-3">
+                        {brand.description}
+                      </p>
+                      <span className="text-primary text-sm font-semibold mt-4 inline-block group-hover:underline">
+                        En savoir plus →
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>

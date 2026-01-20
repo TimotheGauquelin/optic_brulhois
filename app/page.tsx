@@ -130,10 +130,14 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {siteData.brands.slice(0, 4).map((brand) => (
-                <div key={brand.id} className="py-6 px-3 border border-black space-y-4 flex flex-col items-center justify-center shadow-[0px_1px_12px_rgba(0,0,0,0.4)]">
+                <a 
+                key={brand.id} 
+                href={`/marques/${brand.id}`}
+                className="block py-6 px-3 border border-[#e8e8e8] rounded-md space-y-4 flex flex-col items-center justify-center shadow-[0px_1px_12px_rgba(0,0,0,0.4)]"
+                >
                   <div className="w-full rounded-lg border border-[#A0A0A0]">
                     <Image
-                      src={brand.image ?? ""}
+                      src={brand.images[0] ?? ""}
                       alt={brand.name}
                       width={100}
                       height={100}
@@ -141,7 +145,7 @@ export default function HomePage() {
                     />
                   </div>
                   <p className="text-base font-bold">{brand.name}</p>
-                </div>
+                </a>
               ))}
             </div>
             <Link href="/marques" className="inline-block w-fit mx-auto bg-secondary text-white p-6 rounded-lg font-bold hover:bg-secondary/80 transition-colors duration-200 shadow-lg hover:shadow-xl">

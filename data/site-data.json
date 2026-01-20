@@ -87,92 +87,241 @@
       "id": "lafont",
       "name": "Lafont",
       "description": "Marque française emblématique créée en 1923, spécialisée dans les montures haut de gamme.",
+      "detailedDescription": "Lafont est une marque française emblématique créée en 1923, spécialisée dans les montures haut de gamme. Depuis près d'un siècle, Lafont incarne l'excellence du savoir-faire français dans l'optique. Chaque monture Lafont est le fruit d'un artisanat d'exception, alliant tradition et innovation. La marque propose des collections élégantes et intemporelles, fabriquées en France avec des matériaux de qualité supérieure. Lafont est reconnue pour son design raffiné et son confort exceptionnel, faisant de chaque paire de lunettes un véritable accessoire de mode.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg",
+        "/images/services_page/cabinet_machines.jpg"
+      ],
+      "history": "Fondée en 1923 par Pierre Lafont, la marque a su évoluer avec son temps tout en conservant ses valeurs d'excellence et d'authenticité. Aujourd'hui, Lafont continue de fabriquer ses montures en France, perpétuant un savoir-faire unique transmis de génération en génération.",
+      "features": [
+        "Fabrication française",
+        "Matériaux haut de gamme",
+        "Design intemporel",
+        "Confort exceptionnel",
+        "Collections limitées"
+      ]
     },
     {
       "id": "face-a-face",
       "name": "Face à Face",
       "description": "Créateur français de montures design et contemporaines depuis 1995.",
+      "detailedDescription": "Face à Face est un créateur français de montures design et contemporaines fondé en 1995. La marque se distingue par son approche créative et audacieuse, proposant des montures qui allient esthétique moderne et confort optimal. Chaque collection Face à Face reflète une vision unique de la mode optique, avec des designs innovants qui s'adressent aux personnes désireuses d'affirmer leur personnalité. Les montures sont fabriquées avec des matériaux de qualité supérieure et un souci du détail qui fait de chaque paire un véritable accessoire de mode.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg"
+      ],
+      "history": "Fondée en 1995, Face à Face a rapidement su se faire une place dans l'univers de l'optique française grâce à son approche créative et son design avant-gardiste. La marque a su évoluer avec les tendances tout en conservant son identité unique, faisant d'elle une référence dans le domaine des montures design.",
+      "features": [
+        "Design contemporain et audacieux",
+        "Fabrication française",
+        "Matériaux de qualité",
+        "Collections tendance",
+        "Confort optimisé"
+      ]
     },
     {
       "id": "alain-mikli",
       "name": "Alain Mikli",
       "description": "Marque française de luxe créée par le designer Alain Mikli, reconnue pour son innovation.",
+      "detailedDescription": "Alain Mikli est une marque française de luxe créée par le designer éponyme, reconnue mondialement pour son innovation et son design avant-gardiste. Depuis sa création, la marque a révolutionné l'univers de l'optique en proposant des montures qui sont de véritables œuvres d'art. Chaque création Alain Mikli allie esthétique audacieuse, innovation technique et confort exceptionnel. La marque est appréciée par les personnalités du monde entier pour son caractère unique et sa qualité irréprochable.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg"
+      ],
+      "history": "Créée par le designer Alain Mikli, la marque a vu le jour avec une vision révolutionnaire de l'optique. Alain Mikli a su transformer les lunettes en accessoires de mode à part entière, collaborant avec de nombreux créateurs et artistes. Aujourd'hui, la marque continue d'innover et de surprendre avec des collections toujours plus créatives.",
+      "features": [
+        "Design avant-gardiste",
+        "Innovation technique",
+        "Qualité de luxe",
+        "Collaborations artistiques",
+        "Reconnaissance internationale"
+      ]
     },
     {
       "id": "ic-berlin",
       "name": "ic! berlin",
       "description": "Marque française de montures techniques sans vis ni soudure, design minimaliste.",
+      "detailedDescription": "ic! berlin est une marque française reconnue pour ses montures techniques révolutionnaires, fabriquées sans vis ni soudure. Le design minimaliste et épuré de la marque allie esthétique moderne et innovation technique. Chaque monture ic! berlin est le résultat d'un savoir-faire unique, avec un système de fixation innovant qui garantit une résistance exceptionnelle tout en conservant une légèreté remarquable. La marque séduit par son approche technique et son design intemporel.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg"
+      ],
+      "history": "ic! berlin a révolutionné l'industrie optique avec son système de fixation sans vis ni soudure, breveté et unique au monde. Cette innovation technique a permis à la marque de se distinguer et de devenir une référence dans le domaine des montures techniques et durables.",
+      "features": [
+        "Système sans vis ni soudure",
+        "Design minimaliste",
+        "Légèreté exceptionnelle",
+        "Résistance optimale",
+        "Fabrication de précision"
+      ]
     },
     {
       "id": "jacques-durand",
       "name": "Jacques Durand",
       "description": "Marque française artisanale créée en 1950, spécialisée dans les montures en acétate.",
+      "detailedDescription": "Jacques Durand est une marque française artisanale créée en 1950, spécialisée dans la fabrication de montures en acétate de cellulose. Cette matière noble, travaillée avec un savoir-faire traditionnel, confère aux montures Jacques Durand un caractère unique et authentique. Chaque paire de lunettes est le fruit d'un travail artisanal minutieux, où l'acétate est sculpté, poli et façonné à la main. La marque incarne l'excellence du savoir-faire français et la tradition de l'artisanat optique.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg"
+      ],
+      "history": "Fondée en 1950, Jacques Durand a su préserver les techniques artisanales traditionnelles tout en les adaptant aux exigences modernes. La marque perpétue un savoir-faire unique dans le travail de l'acétate, transmis de génération en génération, faisant d'elle une référence dans l'artisanat optique français.",
+      "features": [
+        "Fabrication artisanale",
+        "Acétate de cellulose",
+        "Travail à la main",
+        "Tradition française",
+        "Qualité authentique"
+      ]
     },
     {
       "id": "morel",
       "name": "Morel",
       "description": "Marque française créée en 1880, fabricant de montures et de verres optiques.",
+      "detailedDescription": "Morel est une marque française historique créée en 1880, fabricant à la fois des montures et des verres optiques. Avec plus de 140 ans d'expertise, Morel incarne la tradition et l'innovation dans l'industrie optique française. La marque propose des montures élégantes et intemporelles, ainsi que des verres optiques de haute qualité. Morel allie savoir-faire traditionnel et technologies modernes pour offrir des produits qui répondent aux besoins de tous, du design classique aux collections contemporaines.",
       "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
-    },
-    {
-      "id": "krys",
-      "name": "Krys",
-      "description": "Réseau français d'optique créé en 1965, proposant des montures accessibles.",
-      "category": "Lunettes",
-      "image": "/images/cabinet_machines.jpg"
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/multichoix_lunettes.jpg"
+      ],
+      "history": "Fondée en 1880, Morel est l'une des plus anciennes marques françaises d'optique. Au fil des décennies, la marque a su évoluer et s'adapter aux changements tout en conservant ses valeurs d'excellence et de qualité. Aujourd'hui, Morel continue de fabriquer en France, perpétuant un savoir-faire unique.",
+      "features": [
+        "Plus de 140 ans d'expertise",
+        "Fabrication française",
+        "Montures et verres",
+        "Tradition et innovation",
+        "Qualité reconnue"
+      ]
     },
     {
       "id": "essilor",
       "name": "Essilor",
       "description": "Leader mondial français des verres optiques, créé en 1972.",
-      "category": "Verres"
+      "detailedDescription": "Essilor est le leader mondial français des verres optiques, créé en 1972. La marque est reconnue pour son innovation constante et son engagement en faveur d'une meilleure vision pour tous. Essilor développe et fabrique une large gamme de verres optiques, des verres simples aux verres progressifs les plus avancés, en passant par les traitements antireflets et les verres photochromiques. Avec ses nombreuses innovations technologiques, Essilor améliore la vie quotidienne de millions de personnes à travers le monde.",
+      "category": "Verres",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/cabinet_machines.jpg"
+      ],
+      "history": "Créé en 1972, Essilor est né de la fusion de deux entreprises françaises historiques. Depuis, le groupe n'a cessé d'innover et de développer de nouvelles technologies pour améliorer la vision. Essilor est aujourd'hui présent dans plus de 100 pays et continue d'investir massivement en recherche et développement.",
+      "features": [
+        "Leader mondial",
+        "Innovation technologique",
+        "Gamme complète de verres",
+        "Recherche et développement",
+        "Qualité française"
+      ]
     },
     {
       "id": "varilux",
       "name": "Varilux",
       "description": "Marque française d'Essilor spécialisée dans les verres progressifs depuis 1959.",
-      "category": "Verres"
+      "detailedDescription": "Varilux est la marque française d'Essilor spécialisée dans les verres progressifs depuis 1959. Pionnier dans ce domaine, Varilux a révolutionné la vision des presbytes en créant les premiers verres progressifs au monde. Aujourd'hui, Varilux continue d'innover avec des technologies de pointe qui offrent une vision naturelle et confortable à toutes les distances. Les verres Varilux sont le résultat de décennies de recherche et de développement, offrant une transition fluide entre la vision de près, intermédiaire et de loin.",
+      "category": "Verres",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/cabinet_machines.jpg"
+      ],
+      "history": "Créée en 1959, Varilux a inventé le premier verre progressif au monde, révolutionnant ainsi la vie des presbytes. Depuis, la marque n'a cessé d'innover, développant des technologies toujours plus avancées pour offrir le meilleur confort visuel possible. Varilux est aujourd'hui la référence mondiale en matière de verres progressifs.",
+      "features": [
+        "Pionnier des verres progressifs",
+        "Vision naturelle à toutes distances",
+        "Technologies de pointe",
+        "Confort optimal",
+        "Référence mondiale"
+      ]
     },
     {
       "id": "crizal",
       "name": "Crizal",
       "description": "Marque française d'Essilor pour les traitements antireflets et anti-rayures.",
-      "category": "Verres"
+      "detailedDescription": "Crizal est la marque française d'Essilor spécialisée dans les traitements antireflets et anti-rayures pour verres optiques. Les traitements Crizal offrent une protection complète à vos verres : réduction des reflets gênants, protection contre les rayures, résistance aux salissures et facilité de nettoyage. Grâce aux technologies avancées développées par Essilor, les verres traités Crizal offrent une vision plus claire et plus confortable, tout en restant plus faciles à entretenir. Crizal améliore votre confort visuel au quotidien.",
+      "category": "Verres",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/cabinet_machines.jpg"
+      ],
+      "history": "Crizal a été développé par Essilor pour répondre aux besoins de protection et de confort visuel. Depuis son lancement, la marque n'a cessé d'évoluer avec de nouvelles générations de traitements toujours plus performants, offrant une protection optimale et une vision plus claire.",
+      "features": [
+        "Traitement antireflets",
+        "Protection anti-rayures",
+        "Résistance aux salissures",
+        "Facilité de nettoyage",
+        "Vision plus claire"
+      ]
     },
     {
       "id": "airwear",
       "name": "Airwear",
       "description": "Marque française d'Essilor pour les verres en polycarbonate ultra-résistants.",
-      "category": "Verres"
+      "detailedDescription": "Airwear est la marque française d'Essilor spécialisée dans les verres en polycarbonate ultra-résistants. Les verres Airwear offrent une protection exceptionnelle grâce à leur matière légère et résistante aux chocs. Idéaux pour les enfants, les sportifs et les personnes actives, les verres Airwear combinent sécurité, légèreté et confort. Le polycarbonate utilisé par Airwear est jusqu'à 10 fois plus résistant aux chocs que les verres minéraux standards, tout en étant beaucoup plus léger. Une solution idéale pour une vision claire et sécurisée.",
+      "category": "Verres",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/cabinet_machines.jpg"
+      ],
+      "history": "Airwear a été développé par Essilor pour répondre au besoin de verres plus résistants et plus sûrs. La technologie du polycarbonate a permis de créer des verres qui allient résistance exceptionnelle et légèreté, faisant d'Airwear le choix privilégié pour la sécurité et le confort.",
+      "features": [
+        "Ultra-résistant aux chocs",
+        "Léger et confortable",
+        "Protection UV intégrée",
+        "Idéal pour enfants et sportifs",
+        "Sécurité optimale"
+      ]
     },
     {
       "id": "essilor-acuvue",
       "name": "Acuvue (Essilor)",
       "description": "Lentilles de contact de qualité, distribuées par Essilor en France.",
-      "category": "Lentilles"
+      "detailedDescription": "Acuvue, distribuée par Essilor en France, est une marque de lentilles de contact de qualité reconnue mondialement. Les lentilles Acuvue offrent un confort exceptionnel et une vision claire tout au long de la journée. Disponibles en différentes modalités (journalières, bi-hebdomadaires, mensuelles), les lentilles Acuvue s'adaptent à tous les besoins et modes de vie. Grâce aux technologies avancées développées par Johnson & Johnson Vision, les lentilles Acuvue procurent une hydratation optimale et une oxygénation maximale de la cornée pour un confort durable.",
+      "category": "Lentilles",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/pose_lentilles.jpg"
+      ],
+      "history": "Acuvue est une marque développée par Johnson & Johnson Vision, leader mondial dans le domaine des lentilles de contact. Distribuée en France par Essilor, Acuvue bénéficie de décennies d'innovation et de recherche pour offrir les meilleures solutions de correction visuelle en lentilles de contact.",
+      "features": [
+        "Confort exceptionnel",
+        "Vision claire toute la journée",
+        "Différentes modalités disponibles",
+        "Hydratation optimale",
+        "Oxygénation maximale"
+      ]
     },
     {
       "id": "coopervision",
       "name": "CooperVision",
       "description": "Marque française de lentilles de contact, filiale de Cooper Companies.",
-      "category": "Lentilles"
-    },
-    {
-      "id": "bausch-lomb",
-      "name": "Bausch + Lomb",
-      "description": "Marque internationale présente en France, spécialisée dans les lentilles et solutions d'entretien.",
-      "category": "Lentilles"
+      "detailedDescription": "CooperVision est une marque française de lentilles de contact, filiale de Cooper Companies, l'un des leaders mondiaux dans le domaine de la correction visuelle. Les lentilles CooperVision sont conçues pour offrir un confort optimal et une vision précise. La marque propose une large gamme de lentilles adaptées à différents besoins : correction de la myopie, de l'hypermétropie, de l'astigmatisme, et même des solutions pour la presbytie. Avec ses technologies innovantes, CooperVision garantit une oxygénation optimale de la cornée et un confort durable tout au long de la journée.",
+      "category": "Lentilles",
+      "image": "/images/cabinet_machines.jpg",
+      "images": [
+        "/images/cabinet_machines.jpg",
+        "/images/services_page/pose_lentilles.jpg"
+      ],
+      "history": "CooperVision fait partie de Cooper Companies, un groupe international spécialisé dans les solutions de correction visuelle. Présente en France, la marque bénéficie de l'expertise mondiale du groupe tout en s'adaptant aux besoins spécifiques du marché français. CooperVision continue d'innover pour offrir les meilleures solutions en lentilles de contact.",
+      "features": [
+        "Large gamme de corrections",
+        "Confort optimal",
+        "Oxygénation optimale",
+        "Technologies innovantes",
+        "Solutions pour tous les besoins"
+      ]
     }
   ],
   "testimonies": [
